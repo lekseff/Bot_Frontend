@@ -1,0 +1,421 @@
+.bot {
+  display: flex;
+  max-width: 820px;
+  width: 100%;
+  max-height: 590px;
+  height: 100%;
+  border-radius: 8px;
+  background-color: #2d2d2de0;
+  overflow: hidden;
+}
+
+/* Блок онлайн/оффлайн */ 
+
+.online {
+  width: 30%;
+  padding: 10px;
+  background-color: #1f1f1fd1;
+  
+}
+
+.online div.online__user:nth-child(n+2) {
+  margin-top: 8px;
+}
+
+.online__title-online,
+.online__title-offline {
+  position: relative;
+  font-size: 18px;
+  font-weight: 400;
+  color: #e4d3d3;
+  padding: 10px 22px 10px 10px;
+  border-bottom: 1px solid #e4d3d3; 
+  margin-bottom: 10px;
+  overflow: hidden;
+  word-wrap:break-word;
+}
+
+.online__title-offline::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  right: 5px;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: rgb(232, 67, 67);  
+}
+
+.online__title-online::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  right: 5px;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: rgb(13, 178, 21);  
+}
+
+.online__connect_button {
+  font-size: 14px;
+  color: #171414;
+  width: 100%;
+  padding: 6px 10px;
+  background-color: #D8D8D8;
+  /* outline: none; */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.online__connect_button:hover {
+  transform: translateY(-2px);
+  transition: all 0.2s ease-out;
+}
+
+.online__connect_button:disabled {
+  background-color: #545454;
+}
+
+/* Конец блока онлайн/оффлайн */ 
+
+
+
+/* Сообщение */
+
+.communication {  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.communication__messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 1;
+  padding-bottom: 10px;
+  padding: 8px;
+  margin: 12px 12px 0 12px;
+  border: 1px solid #6c6c6cd1;
+  border-radius: 8px;
+  overflow-y: scroll;
+  overflow-x: hidden;  
+}
+
+/* Стиль scroll */
+.communication__messages::-webkit-scrollbar {
+  width: 8px;
+  background-color: #2d2d2de0;
+  background-color: transparent;
+}
+
+.communication__messages::-webkit-scrollbar-thumb {
+  background-color: #818181d4;
+  border-radius: 4px;
+}
+
+/* Конец стиль scroll */
+
+.message {
+  font-size: 14px;
+  color: #e4d3d3;
+  padding: 8px 16px;
+  width: fit-content;
+  max-width: 74%;
+  min-width: 50px;
+  text-align: right;
+  margin-top: auto;
+  align-self: flex-end;
+  border-radius: 9px 9px 0 9px;
+  word-wrap: break-word;
+  background-color: #6472e3b3;
+  opacity: 0;
+  transform: scale(0);
+  animation-name: view-message;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes view-message {
+  0% { 
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.message a {
+  font-family: inherit;
+  color: blue;
+}
+
+.communication__messages > div:nth-child(n+2) {
+  margin-top: 12px;
+}
+
+.message__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 2px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.message__nickname {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.message-date {
+  font-size: 11px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+/* audio message */
+.audio__message {
+  text-align: center;
+  min-width: 62%;
+  background-color: #2f6eb6ed;
+}
+
+.audio__message audio {
+  width: 100%;
+}
+
+.sound__title {  
+  font-size: 13px;
+  font-weight: 300;
+  padding-top: 4px;
+}
+/* end audio message */
+
+video {
+  width: 100%;
+}
+
+.geolocation {
+  background-color: #1d7f4e;
+}
+
+/* Конец сообщения */
+
+/* Новости */
+
+.news {
+  color: black;
+  background-color: rgb(255, 255, 255);
+}
+
+.news__title {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.news__description {
+  text-indent: 20px;
+  text-align: justify;
+  margin-bottom: 6px;
+}
+
+/* конец новости */
+
+
+
+/* Сообщение погоды */
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 14px;
+  font-weight: 400;
+  color: #403939;
+  padding: 4px 10px;
+  width: fit-content;
+  max-width: 74%;
+  min-width: 190px;
+  align-self: flex-end;
+  border-radius: 9px 9px 0 9px;
+  word-wrap: break-word;
+  background-color: #ffffff;
+}
+
+.weather__logo {
+  margin-right: 6px;
+}
+
+.weather__icon {
+  width: 100%;
+}
+
+.weather__info {
+  text-align: center;
+}
+
+.weather__temp {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.weather__temp span {
+  font-size: 20px;
+}
+
+
+/* Отправка сообщения */
+
+.communication__control {
+  display: flex;
+  align-items: center;  
+  padding: 12px;
+  height: 64px;
+}
+
+.views {
+  width: 240px;
+  padding: 4px;
+  background-color: transparent;
+  border: 1px solid #6c6c6cd1;
+}
+
+.views img {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.send__load-file {
+  position: absolute;
+  top: -9999px;  
+}
+
+.send__form {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.send__input-label {
+  flex-grow: 1;
+  margin-right: 8px;
+}
+
+.send__input {
+  flex-grow: 1;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: normal;
+  color: #e4d3d3;
+  padding: 10px 46px 10px 14px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #797575b0;
+}
+
+.send__input::placeholder {
+  font-size: 16px;
+  font-weight: 300;
+  color: #e4d3d3;
+  opacity: 0.5;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.05s ease-in-out;
+}
+
+.btn:hover {
+  background-size: 26px 26px;
+  transition: background 0.05s ease-in-out;
+}
+
+.submit__button {
+  position: absolute;
+  right: 6px;
+  top: 0;
+  height: 100%;
+  width: 39px;
+  background-color: transparent;
+  background-image: url('../img/icons/send_filled_icon.svg'); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+}
+
+
+.send__buttons {
+  height: 100%;
+}
+
+.send__primary_buttons,
+.send__record_buttons {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.send__primary_buttons button:nth-child(n+2),
+.send__record_buttons button:nth-child(n+2) {
+  margin-left: 8px;
+}
+
+.send__button-load {
+  flex-shrink: 0;
+  width: 25px;
+  height: 100%;
+  margin-right: 8px;
+  background: url('../img/icons/load.svg');
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+}
+
+.send__button-audio {
+  width: 24px;
+  height: 100%;
+  background: url('../img/icons/microphone2.svg');
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+}
+
+.send__button-geo {
+  width: 24px;
+  height: 100%;
+  background: url('../img/icons/geo.svg');
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+}
+
+.send__button-stop {
+  width: 24px;
+  height: 100%;
+  background: url('../img/icons/stop.svg');
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+}
+
+.record__time {
+  color: #e4d3d3;
+  display: inline-block;
+  margin-left: 6px;
+}
